@@ -15,3 +15,7 @@ python main.py
 * Random computer choice
 * Win/Lose/Draw logic
 
+## Controls
+- s = Snake
+- w = Water
+- g = Gun
