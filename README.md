@@ -14,4 +14,4 @@ python main.py
 
 * Random computer choice
 * Win/Lose/Draw logic
-* Clean and readable code
+
