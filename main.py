@@ -4,6 +4,8 @@ g => gun => 2 """
 
 import random
 
+point_user = 0 
+point_computer = 0
 
 user_dict = {
     "s" : "snake",
@@ -29,11 +31,17 @@ def output_func(a,b):
     print(f"You chose '{a}'")
     print(f"Computer chose '{b}'")
 
+def point_count(user,computer):
+    print(f"Your point is {user}")
+    print(f"Computer point is {computer}")
+          
+
+
 while True:
     print()
     user_input = input("Enter your choice : ")
     user_input = user_input.lower()
-
+    
     if(user_input in ("s","w","g")):
         computer = random.choice([0, 1, 2])
         
@@ -43,16 +51,25 @@ while True:
         if(user_choice == computer_choice):
             output_func(user_choice,computer_choice)
             print("It's a Draw!")
+            point_count(point_user,point_computer)
         else:
             if (user_win[user_choice] == computer_choice):
                 output_func(user_choice,computer_choice)
                 print("You win!!")
+                point_user += 1
+                point_count(point_user,point_computer)
             else:
                 output_func(user_choice,computer_choice)
                 print("You lose! :(")
+                point_computer += 1
+                point_count(point_user,point_computer)
     else:
         print("Invalid input. Exiting game.")
         break
+                
+                
+               
+
 
 
 
