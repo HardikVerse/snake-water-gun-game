@@ -14,6 +14,7 @@ python main.py
 
 * Random computer choice
 * Win/Lose/Draw logic
+* Score tracking
 
 ## Controls
 - s = Snake
