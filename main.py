@@ -34,9 +34,15 @@ def output_func(a,b):
 def point_count(user,computer):
     print(f"Your point is {user}")
     print(f"Computer point is {computer}")
+
+def round_win(points,winner):
+    if(points == 5):
+        print(f"{winner} Won🏆!!")
+        print("Enter your choice below to start new round")
+        print()
+    
+
           
-
-
 while True:
     print()
     user_input = input("Enter your choice : ")
@@ -55,18 +61,19 @@ while True:
         else:
             if (user_win[user_choice] == computer_choice):
                 output_func(user_choice,computer_choice)
-                print("You win!!")
+                print("You won!!")
                 point_user += 1
                 point_count(point_user,point_computer)
+                round_win(point_user,"You")
             else:
                 output_func(user_choice,computer_choice)
                 print("You lose! :(")
                 point_computer += 1
                 point_count(point_user,point_computer)
+                round_win(point_computer,"Computer")
     else:
         print("Invalid input. Exiting game.")
         break
-                
                 
                
 
