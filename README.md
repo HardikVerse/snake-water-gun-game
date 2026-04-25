@@ -15,6 +15,7 @@ python main.py
 * Random computer choice
 * Win/Lose/Draw logic
 * Score tracking
+* Implement round win condition for the game
 
 ## Controls
 - s = Snake
