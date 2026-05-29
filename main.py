@@ -4,8 +4,6 @@ g => gun => 2 """
 
 import random
 
-point_user = 0 
-point_computer = 0
 
 user_dict = {
     "s" : "snake",
@@ -19,7 +17,7 @@ computer_dict = {
     2 : "gun"
 }
 
-user_win = {
+user_win = {                         #Only cases where user can win..
     "snake" : "water",
     "water" : "gun",
     "gun" : "snake"
@@ -32,17 +30,23 @@ def output_func(a,b):
     print(f"Computer chose '{b}'")
 
 def point_count(user,computer):
-    print(f"Your point is {user}")
-    print(f"Computer point is {computer}")
+    print(f"\nYour point is {user}")
+    print(f"Computer point is {computer}\n")
+
+point_user = 0 
+point_computer = 0
 
 def round_win(points,winner):
     if(points == 5):
+        
         print(f"{winner} Won🏆!!")
         print("Enter your choice below to start new round")
         print()
-    
+        point_user = 0 
+        point_computer = 0
 
-          
+
+    
 while True:
     print()
     user_input = input("Enter your choice : ")
@@ -64,18 +68,28 @@ while True:
                 print("You won!!")
                 point_user += 1
                 point_count(point_user,point_computer)
-                round_win(point_user,"You")
+
+                if(point_user == 5):
+                    print(f"You are winner🏆!!")
+                    print("Enter your choice below to start new round")
+                    print()
+                    point_user = 0 
+                    point_computer = 0
+                
             else:
                 output_func(user_choice,computer_choice)
                 print("You lose! :(")
                 point_computer += 1
                 point_count(point_user,point_computer)
-                round_win(point_computer,"Computer")
+                if(point_computer == 5):
+                    print(f"Computer is winner🏆!!")
+                    print("Enter your choice below to start new round")
+                    print()
+                    point_user = 0 
+                    point_computer = 0
     else:
         print("Invalid input. Exiting game.")
         break
-                
-               
 
 
 
